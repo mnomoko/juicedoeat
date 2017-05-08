@@ -1,1 +1,1 @@
-web: node /js/gulp build
+web: node gulp heroku:production
