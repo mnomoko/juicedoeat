@@ -6,7 +6,7 @@ var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var filter = require('gulp-filter');
-var runSeq = require('run-sequence');
+var runSeq = require('run-sequence').use(gulp);
 var pkg = require('./package.json');
 
 // Set the banner content
@@ -97,5 +97,5 @@ gulp.task('dev', ['browserSync', 'less', 'minify-css', 'minify-js'], function() 
 });
 
 gulp.task('heroku:production', function(){
-    runSeq('clean', 'build', 'minify')
+    runSeq('build')
 });
