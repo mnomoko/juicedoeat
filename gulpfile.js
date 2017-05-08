@@ -6,6 +6,7 @@ var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var filter = require('gulp-filter');
+var runSeq = require('run-sequence');
 var pkg = require('./package.json');
 
 // Set the banner content
@@ -74,6 +75,7 @@ gulp.task('copy', function() {
 
 // Run everything
 gulp.task('default', ['less', 'minify-css', 'minify-js', 'copy']);
+gulp.task('build', ['less', 'minify-css', 'minify-js', 'copy']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
@@ -94,5 +96,6 @@ gulp.task('dev', ['browserSync', 'less', 'minify-css', 'minify-js'], function() 
     gulp.watch('js/**/*.js', browserSync.reload);
 });
 
-// Prod task with browserSync
-gulp.task('prod', ['less', 'minify-css', 'minify-js', 'copy']);
+gulp.task('heroku:production', function(){
+    runSeq('clean', 'build', 'minify')
+});
