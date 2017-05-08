@@ -2,12 +2,9 @@
   "name": "juicedoeat",
   "title": "Juice Do Eat",
   "version": "3.3.7+1",
-  "homepage": "http://startbootstrap.com/template-overviews/freelancer",
+  "homepage": "https://secure-stream-83380.herokuapp.com/",
   "author": "Start Bootstrap",
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/mnomoko/juicedoeat/LICENSE"
-  },
+  "license": "MIT",
   "devDependencies": {
     "bootstrap": "^3.3.7",
     "browser-sync": "^2.13.0",
@@ -26,6 +23,9 @@
     "url": "https://github.com/mnomoko/juicedoeat.git"
   },
   "scripts": {
-    "start": "gulp default"
+    "start": "gulp build"
+  },
+  "config": {
+    "myPort": "8000"
   }
 }
