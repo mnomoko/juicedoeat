@@ -93,3 +93,6 @@ gulp.task('dev', ['browserSync', 'less', 'minify-css', 'minify-js'], function() 
     gulp.watch('*.html', browserSync.reload);
     gulp.watch('js/**/*.js', browserSync.reload);
 });
+
+// Prod task with browserSync
+gulp.task('prod', ['less', 'minify-css', 'minify-js', 'copy']);
