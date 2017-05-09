@@ -9,6 +9,8 @@
     "bootstrap": "^3.3.7",
     "browser-sync": "^2.13.0",
     "font-awesome": "^4.6.3",
+    "ejs": "2.5.6",
+    "express": "4.15.2",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.0.10",
     "gulp-filter": "^4.0.0",
@@ -24,9 +26,7 @@
     "url": "https://github.com/mnomoko/juicedoeat.git"
   },
   "scripts": {
-    "start": "gulp"
-  },
-  "config": {
-    "myPort": "8000"
+    "start": "node index.js && gulp default",
+    "postinstall": "gulp -p"
   }
 }
